@@ -38,7 +38,9 @@ RUN gem install r10k --version $R10K_VERSION --no-ri --no-rdoc
 COPY r10k.yaml /etc/puppetlabs/r10k/r10k.yaml
 
 # Configure .ssh directory
-RUN mkdir /root/.ssh && chmod 0600 /root/.ssh
+RUN mkdir /root/.ssh \
+  && chmod 0600 /root/.ssh \
+  && echo StrictHostKeyChecking no > /root/.ssh/config
 
 # Configure entrypoint
 COPY /docker-entrypoint.sh /
