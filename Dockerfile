@@ -28,6 +28,11 @@ RUN sed -i -e 's/stomp1/activemq/' -e 's/6163/61613/' /etc/puppetlabs/mcollectiv
 
 COPY plugins/ /opt/puppetlabs/mcollective/plugins/
 
+# Install git
+RUN apt-get update \
+  && apt-get install -y git \
+  && rm -rf /var/lib/apt/lists/*
+
 # Install r10k
 ENV R10K_VERSION='2.1.1'
 RUN gem install r10k --version $R10K_VERSION --no-ri --no-rdoc
