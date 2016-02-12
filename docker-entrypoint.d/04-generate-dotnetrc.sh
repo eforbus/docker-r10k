@@ -2,7 +2,7 @@
 set -e
 
 if test -n "${GITHUB_USER}" && test -n "${GITHUB_PASSWORD}"; then
-  cat << EOF > /opt/puppetlabs/r10k/.netrc
+  cat << EOF > /root/.netrc
 machine github.com
 login ${GITHUB_USER}
 password ${GITHUB_PASSWORD}
