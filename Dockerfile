@@ -38,6 +38,9 @@ ENV R10K_VERSION='2.1.1'
 RUN gem install r10k --version $R10K_VERSION --no-ri --no-rdoc
 COPY r10k.yaml /etc/puppetlabs/r10k/r10k.yaml
 
+# Configure .ssh directory
+RUN mkdir /root/.ssh && chmod 0600 /root/.ssh
+
 # Configure entrypoint
 COPY /docker-entrypoint.sh /
 COPY /docker-entrypoint.d/* /docker-entrypoint.d/
