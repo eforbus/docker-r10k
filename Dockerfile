@@ -6,7 +6,7 @@ ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
-ENV PATH=/opt/puppetlabs/server/bin:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH
+ENV PATH=/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH
 
 # Install puppet-agent
 ENV RELEASE jessie
