@@ -1,12 +1,14 @@
 #!/bin/bash
 
-if getent hosts rancher-metadata > /dev/null && test -n "${CA}" && ! ${CA} ; then
+if getent hosts rancher-metadata > /dev/null ; then
   # Generate csr_attributes.yaml
   cat << EOF > /etc/puppetlabs/puppet/csr_attributes.yaml
 ---
 custom_attributes:
   1.2.840.113549.1.9.7: '$(curl http://rancher-metadata/latest/self/service/name 2> /dev/null):$(curl http://rancher-metadata/latest/self/service/uuid 2> /dev/null)'
 EOF
+
+  puppet config set certname $(curl http://rancher-metadata/latest/self/container/uuid 2> /dev/null)
 
   # Get certificate
   if getent hosts puppetca > /dev/null; then
