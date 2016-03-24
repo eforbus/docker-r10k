@@ -1,4 +1,4 @@
-FROM camptocamp/mcollectived:2.8.8-2
+FROM camptocamp/mcollectived:2.8.8-3
 
 MAINTAINER mickael.canevet@camptocamp.com
 
