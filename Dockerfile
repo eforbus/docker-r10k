@@ -8,7 +8,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Install r10k
-ENV R10K_VERSION='2.4.3'
+ENV R10K_VERSION='2.5.2'
 RUN gem install r10k --version $R10K_VERSION --no-ri --no-rdoc
 
 # Configure .ssh directory
