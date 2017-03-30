@@ -1,6 +1,4 @@
-FROM camptocamp/mcollectived:2.9.1-1
-
-MAINTAINER mickael.canevet@camptocamp.com
+FROM camptocamp/mcollectived:2.10.2-1
 
 # Install git
 RUN apt-get update \
