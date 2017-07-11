@@ -1,4 +1,4 @@
-FROM camptocamp/mcollectived:2.10.2-1
+FROM camptocamp/mcollectived:2.10.2-2
 
 # Install git
 RUN apt-get update \
