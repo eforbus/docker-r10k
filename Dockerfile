@@ -6,8 +6,9 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Install r10k
-ENV R10K_VERSION='2.5.2'
-RUN gem install r10k --version $R10K_VERSION --no-ri --no-rdoc
+ENV R10K_VERSION='95ba8b8'
+RUN gem install specific_install --no-ri --no-rdoc \
+  && gem specific_install -l https://github.com/puppetlabs/r10k.git -b $R10K_VERSION
 
 # Configure .ssh directory
 RUN mkdir /root/.ssh \
